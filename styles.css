@@ -1,0 +1,451 @@
+:root {
+  color-scheme: light;
+  font-family: "Encode Sans Semi Condensed", "Arial Narrow", "Aptos Narrow", Arial, sans-serif;
+  --topbar-height: 52px;
+  --ink: #202124;
+  --muted: #666a70;
+  --line: #d7d9dc;
+  --page: #ffffff;
+  --soft: #f6f6f6;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: var(--page);
+}
+
+body {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+button { font: inherit; }
+button:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
+
+/* Simple header */
+.topbar {
+  height: var(--topbar-height);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 20;
+}
+
+.brand-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.main-nav {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.nav-button {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #686b70;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-button:hover { color: var(--ink); }
+
+.nav-button.is-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.nav-button.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--ink);
+}
+
+.app-main {
+  height: calc(100vh - var(--topbar-height));
+  height: calc(100svh - var(--topbar-height));
+  width: 100vw;
+  overflow: hidden;
+}
+
+.page-view {
+  width: 100%;
+  height: 100%;
+}
+
+.page-view[hidden] { display: none !important; }
+
+/* Home + menu pages */
+.landing-shell,
+.menu-shell {
+  width: min(760px, calc(100% - 40px));
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.landing-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0 70px;
+}
+
+.menu-shell {
+  padding: 52px 0;
+}
+
+.landing-heading,
+.menu-heading {
+  margin-bottom: 24px;
+}
+
+.landing-heading h1,
+.menu-heading h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.landing-heading p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.landing-heading h1 + p {
+  margin-top: 20px;
+}
+
+.landing-heading p:nth-of-type(2) {
+  margin-top: 40px;
+}
+
+.landing-heading p:last-child {
+  margin-top: 40px;
+}
+
+.category-grid,
+.flowchart-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.category-card,
+.flowchart-card {
+  width: 100%;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  border: 1px solid #cfd1d4;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.category-card:hover,
+.flowchart-card:hover {
+  background: var(--soft);
+  border-color: #9ea1a6;
+}
+
+.category-card strong,
+.flowchart-card strong {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.category-card span,
+.flowchart-card span {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+/* Flowcharts */
+.flowchart-view { overflow: hidden; }
+
+.chart-stage {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.chart-stage-with-footer {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chart-wrap {
+  position: relative;
+  display: inline-block;
+  flex: 0 1 auto;
+  min-height: 0;
+  line-height: 0;
+  background: white;
+  border: 1px solid #dedede;
+}
+
+.flowchart {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - var(--topbar-height) - 16px);
+  max-height: calc(100svh - var(--topbar-height) - 16px);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.chart-stage-with-footer .flowchart {
+  max-height: calc(100vh - var(--topbar-height) - 68px);
+  max-height: calc(100svh - var(--topbar-height) - 68px);
+}
+
+/* Click regions remain border-only. */
+.hotspot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  z-index: 2;
+  padding: 0;
+  border: 3px solid var(--border-color);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  transition: border-color 120ms ease, border-width 120ms ease;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  border-color: var(--border-hover, var(--border-color));
+  border-width: 4px;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.chart-footer {
+  flex: 0 0 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.treatment-button,
+.footer-secondary,
+.placeholder-back {
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid #aeb1b5;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.treatment-button {
+  border-color: #b88a61;
+  color: #704b2e;
+}
+
+.treatment-button:hover,
+.footer-secondary:hover,
+.placeholder-back:hover {
+  background: var(--soft);
+}
+
+/* Treatment placeholder */
+.placeholder-card {
+  width: min(620px, calc(100vw - 40px));
+  margin: 70px auto 0;
+  padding: 28px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #cfd1d4;
+  border-radius: 6px;
+}
+
+.placeholder-card h1 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.placeholder-card p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.placeholder-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Image modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 120ms ease, visibility 120ms ease;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(94vw, 1400px);
+  max-height: 91vh;
+  padding: 8px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.modal-image {
+  display: block;
+  max-width: min(90vw, 1340px);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 2px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 700px) {
+  :root { --topbar-height: 88px; }
+
+  .topbar {
+    padding: 10px 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .main-nav {
+    width: 100%;
+    height: 36px;
+    gap: 18px;
+  }
+
+  .landing-shell,
+  .menu-shell {
+    width: min(100% - 28px, 760px);
+  }
+
+  .landing-shell { padding-bottom: 40px; }
+  .menu-shell { padding-top: 34px; }
+
+  .chart-stage-with-footer .flowchart {
+    max-height: calc(100svh - var(--topbar-height) - 96px);
+  }
+
+  .chart-footer {
+    min-height: 84px;
+  }
+}

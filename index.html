@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Respiratory Flowcharts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar" aria-label="Main navigation">
+    <button class="brand-button" type="button" data-view-target="home" aria-label="Go to home page">
+      Respiratory Flowcharts
+    </button>
+
+    <nav class="main-nav" aria-label="Sections">
+      <button class="nav-button is-active" type="button" data-nav="home" data-view-target="home" aria-pressed="true">Home</button>
+      <button class="nav-button" type="button" data-nav="diagnostics" data-view-target="diagnostics-menu" aria-pressed="false">Diagnosis</button>
+      <button class="nav-button" type="button" data-nav="treatments" data-view-target="treatments-menu" aria-pressed="false">Treatment</button>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <!-- HOME -->
+    <section class="page-view is-active" data-view="home" aria-label="Respiratory flowcharts home page">
+      <div class="landing-shell">
+        <div class="landing-heading">
+          <h1>MF1 Respirology; Clinical Medicine</h1>
+          <p><Base></Base>efore you ask, no, I did not make the flowcharts themselves (full credit to ninja nerd)</p>
+          <p>1. Other flowcharts will be added as we progress through the rest of resp</p>
+          <p>2. Use the menu options at the top to navigate, I haven't added all the back buttons yet</p>
+          
+          <p>Special thanks to Zach/Ninja Nerd (sorry Angus), Jackie (for single-handedly teaching me immunology) and the rest of the late night WRC crew</p>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card" type="button" data-view-target="diagnostics-menu">
+            <strong>Diagnostic Flowcharts</strong>
+          </button>
+
+          <button class="category-card" type="button" data-view-target="treatments-menu">
+            <strong>Treatment Approaches</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNOSTIC FLOWCHART PICKER -->
+    <section class="page-view" data-view="diagnostics-menu" aria-label="Diagnostic flowchart picker" hidden>
+      <div class="menu-shell">
+        <div class="menu-heading">
+          <h1>Diagnostic Flowcharts</h1>
+        </div>
+
+        <div class="flowchart-card-grid">
+          <button class="flowchart-card" type="button" data-view-target="urti">
+            <strong>Upper Respiratory Tract Infections</strong>
+            <span>e.g., Croup, epiglottitis, pharyngitis</span>
+          </button>
+
+          <button class="flowchart-card" type="button" data-view-target="asthma">
+            <strong>Asthma Diagnosis</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENT APPROACH PICKER -->
+    <section class="page-view" data-view="treatments-menu" aria-label="Treatment approach picker" hidden>
+      <div class="menu-shell">
+        <div class="menu-heading">
+          <h1>Treatment Approaches</h1>
+        </div>
+
+        <div class="flowchart-card-grid">
+          <button class="flowchart-card" type="button" data-view-target="asthma-treatment">
+            <strong>Asthma Treatment</strong>
+            <span>Placeholder for the treatment flowchart</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- URTI DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="urti" aria-label="Upper respiratory tract infection diagnosis flowchart" hidden>
+      <div class="chart-stage">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/urti-flowchart.png"
+            alt="Diagnostic approach to upper respiratory tract infection"
+            draggable="false"
+          />
+
+          <button
+            class="hotspot"
+            style="--x:40.87%; --y:9.89%; --w:18.02%; --h:3.27%; --border-color:#ffb0aa; --border-hover:#ff8d84;"
+            data-modal-image="assets/initial-stability-assessment.png"
+            data-modal-title="Initial Stability Assessment in URTIs"
+            aria-label="Open Initial Stability Assessment in URTIs"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:24.37%; --y:25.57%; --w:7.76%; --h:6.54%; --border-color:#9a8db8; --border-hover:#776895;"
+            data-modal-image="assets/modified-centor-score.png"
+            data-modal-title="Modified Centor Score"
+            aria-label="Open Modified Centor Score"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:82.08%; --y:25.48%; --w:6.93%; --h:5.95%; --border-color:#d78fb4; --border-hover:#b96f94;"
+            data-modal-image="assets/deep-neck-infections.png"
+            data-modal-title="Deep Neck Infections"
+            aria-label="Open Deep Neck Infections"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:2.56%; --y:71.77%; --w:51.71%; --h:28.23%; --border-color:#9aa6a6; --border-hover:#758383;"
+            data-modal-image="assets/viral-urtis.png"
+            data-modal-title="Viral URTIs"
+            aria-label="Open Viral URTIs supportive care from the Stable URTIs summary panel"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASTHMA DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="asthma" aria-label="Asthma diagnosis flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/asthma-diagnosis.png"
+            alt="Diagnostic approach to asthma flowchart"
+            draggable="false"
+          />
+
+          <button
+            class="hotspot"
+            style="--x:16.21%; --y:47.29%; --w:17.14%; --h:10.03%; --border-color:#83a9d6; --border-hover:#5f8fc4;"
+            data-modal-image="assets/asthma-fev1-fvc.png"
+            data-modal-title="FEV1/FVC and Flow-Volume Loops"
+            aria-label="Open FEV1/FVC and flow-volume loop reference"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:41.31%; --y:47.13%; --w:17.09%; --h:10.19%; --border-color:#83a9d6; --border-hover:#5f8fc4;"
+            data-modal-image="assets/asthma-peak-flow-meter.png"
+            data-modal-title="How to Use a Peak Flow Meter"
+            aria-label="Open instructions for using a peak flow meter"
+          ></button>
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+          <button class="treatment-button" type="button" data-view-target="asthma-treatment">Asthma Treatment →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASTHMA TREATMENT PLACEHOLDER -->
+    <section class="page-view" data-view="asthma-treatment" aria-label="Asthma treatment placeholder" hidden>
+      <div class="placeholder-card">
+        <h1>Asthma Treatment</h1>
+        <p>Treatment flowchart will go here.</p>
+        <div class="placeholder-actions">
+          <button class="placeholder-back" type="button" data-view-target="asthma">← Asthma Diagnosis</button>
+          <button class="placeholder-back" type="button" data-view-target="treatments-menu">Treatment Approaches</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close popup" data-close-modal>&times;</button>
+      <h2 class="sr-only" id="modalTitle">Reference image</h2>
+      <img class="modal-image" id="modalImage" src="" alt="" />
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
