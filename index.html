@@ -29,10 +29,12 @@
         <div class="landing-heading">
           <h1>MF1 Respirology; Clinical Medicine</h1>
           <p><Base></Base>Before you ask, no, I did not make the flowcharts (full credit to ninja nerd)</p>
-          <p>1. Other flowcharts will be added as we progress through the rest of resp</p>
-          <p>2. Use the menu options at the top to navigate, I haven't added all the back buttons yet</p>
+          <p>NOTE: Use the menu options at the top to navigate, I haven't added all the back buttons yet</p>
           
-          <p>Special thanks to Zach/Ninja Nerd (sorry Angus), Jackie (for single-handedly teaching me immunology) and the rest of the late night WRC crew</p>
+          <p class="special-thanks-heading">SPECIAL THANKS TO:</p>
+          <p class="special-thanks-item">1. Zach/Ninja Nerd (sorry Angus)</p>
+          <p class="special-thanks-item">2. Jackie (for teaching me immunology in one night instead of sleeping)</p>
+          <p class="special-thanks-item">3. The rest of the late night WRC crew</p>
         </div>
 
         <div class="category-grid">
@@ -74,12 +76,20 @@
           <h1>Treatment Approaches</h1>
         </div>
 
-        <div class="flowchart-card-grid">
-          <button class="flowchart-card" type="button" data-view-target="asthma-treatment">
-            <strong>Asthma Treatment</strong>
-            <span>Placeholder for the treatment flowchart</span>
-          </button>
-        </div>
+        <section class="treatment-group" aria-labelledby="asthmaTreatmentsHeading">
+          <h2 id="asthmaTreatmentsHeading">Asthma</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="Asthma treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="asthma-treatment-stepwise">
+              Stepwise Asthma Treatment
+            </button>
+            <button class="treatment-choice-tab" type="button" data-view-target="asthma-treatment-exacerbation">
+              Asthma Exacerbation Treatment
+            </button>
+            <button class="treatment-choice-tab" type="button" data-view-target="asthma-treatment-mechanisms">
+              Asthma Treatment Mechanisms
+            </button>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -90,7 +100,7 @@
           <img
             class="flowchart"
             src="assets/urti-flowchart.png"
-            alt="Diagnostic approach to upper respiratory tract infection"
+            alt="Diagnostic approach to upper respiratory tract infections flowchart"
             draggable="false"
           />
 
@@ -159,19 +169,49 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
-          <button class="treatment-button" type="button" data-view-target="asthma-treatment">Asthma Treatment →</button>
+          <button class="treatment-button" type="button" data-view-target="asthma-treatment-stepwise">Asthma Treatment →</button>
         </div>
       </div>
     </section>
 
-    <!-- ASTHMA TREATMENT PLACEHOLDER -->
-    <section class="page-view" data-view="asthma-treatment" aria-label="Asthma treatment placeholder" hidden>
-      <div class="placeholder-card">
-        <h1>Asthma Treatment</h1>
-        <p>Treatment flowchart will go here.</p>
-        <div class="placeholder-actions">
-          <button class="placeholder-back" type="button" data-view-target="asthma">← Asthma Diagnosis</button>
-          <button class="placeholder-back" type="button" data-view-target="treatments-menu">Treatment Approaches</button>
+    <!-- ASTHMA TREATMENT: STEPWISE -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-stepwise" aria-label="Stepwise asthma treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-mechanisms">Mechanisms</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/asthma-treatment-stepwise.png" alt="Stepwise asthma treatment approach" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ASTHMA TREATMENT: EXACERBATION -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-exacerbation" aria-label="Asthma exacerbation treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-mechanisms">Mechanisms</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/asthma-exacerbation-treatment.png" alt="Asthma exacerbation treatment approach" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ASTHMA TREATMENT: MECHANISMS -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-mechanisms" aria-label="Asthma treatment mechanisms flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-mechanisms">Mechanisms</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/asthma-treatment-mechanisms.png" alt="Asthma treatment mechanisms overview" draggable="false" />
         </div>
       </div>
     </section>
