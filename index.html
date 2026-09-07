@@ -91,6 +91,11 @@
             <span>e.g., Stable asthma, asthma exacerbation</span>
           </button>
 
+          <button class="flowchart-card" type="button" data-view-target="pft-diagnosis">
+            <strong>Pulmonary Function Tests</strong>
+            <span>Diagnostic approach to PFTs</span>
+          </button>
+
           <button class="flowchart-card" type="button" data-view-target="respiratory-failure-diagnosis">
             <strong>Respiratory Failure</strong>
             <span>e.g., V/Q mismatch, pulmonary shunt, extrapulmonary shunt</span>
@@ -228,6 +233,24 @@
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
           <button class="treatment-button" type="button" data-view-target="asthma-treatment-stepwise">Asthma Treatment →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULMONARY FUNCTION TESTS DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="pft-diagnosis" aria-label="Pulmonary function tests diagnosis flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/pft-diagnostic-flowchart.png"
+            alt="Diagnostic approach to pulmonary function tests flowchart"
+            draggable="false"
+          />
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
         </div>
       </div>
     </section>

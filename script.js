@@ -39,7 +39,7 @@ function closeModal() {
 
 function sectionForView(viewName) {
   if (viewName === "home") return "home";
-  if (["diagnostics-menu", "urti", "asthma"].includes(viewName)) return "diagnostics";
+  if (["diagnostics-menu", "urti", "asthma", "pft-diagnosis"].includes(viewName)) return "diagnostics";
   if (["treatments-menu", "asthma-treatment"].includes(viewName)) return "treatments";
   return "home";
 }
@@ -51,6 +51,7 @@ function titleForView(viewName) {
     "treatments-menu": "Treatment Approaches — Respiratory Flowcharts",
     urti: "URTI Diagnosis — Respiratory Flowcharts",
     asthma: "Asthma Diagnosis — Respiratory Flowcharts",
+    "pft-diagnosis": "PFT Diagnosis — Respiratory Flowcharts",
     "asthma-treatment": "Asthma Treatment — Respiratory Flowcharts"
   };
   return titles[viewName] || "Respiratory Flowcharts";
