@@ -8,6 +8,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .flowchart-link-hotspot {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--w);
+      height: var(--h);
+      z-index: 5;
+      border: 2px solid var(--border-color, rgba(110, 120, 130, 0.45));
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .flowchart-link-hotspot:hover,
+    .flowchart-link-hotspot:focus-visible {
+      border-color: var(--border-hover, rgba(70, 80, 90, 0.7));
+      background: rgba(255,255,255,0.14);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.35);
+      outline: none;
+    }
+  </style>
 </head>
 <body>
   <header class="topbar" aria-label="Main navigation">
@@ -64,6 +88,17 @@
 
           <button class="flowchart-card" type="button" data-view-target="asthma">
             <strong>Asthma Diagnosis</strong>
+            <span>e.g., Stable asthma, asthma exacerbation</span>
+          </button>
+
+          <button class="flowchart-card" type="button" data-view-target="respiratory-failure-diagnosis">
+            <strong>Respiratory Failure</strong>
+            <span>e.g., V/Q mismatch, pulmonary shunt, extrapulmonary shunt</span>
+          </button>
+
+          <button class="flowchart-card" type="button" data-view-target="pneumonia-diagnosis">
+            <strong>Pneumonia</strong>
+            <span>e.g., Community-acquired pneumonia, hospital-acquired pneumonia, ventilator-acquired pneumonia</span>
           </button>
         </div>
       </div>
@@ -87,6 +122,29 @@
             </button>
             <button class="treatment-choice-tab" type="button" data-view-target="asthma-treatment-mechanisms">
               Asthma Treatment Mechanisms
+            </button>
+          </div>
+        </section>
+
+
+        <section class="treatment-group" aria-labelledby="respiratoryFailureTreatmentsHeading">
+          <h2 id="respiratoryFailureTreatmentsHeading">Respiratory Failure</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="Respiratory failure treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="respiratory-failure-treatment">
+              Respiratory Failure Treatment
+            </button>
+            <button class="treatment-choice-tab" type="button" data-view-target="ventilator-management">
+              Managing the Ventilator
+            </button>
+          </div>
+        </section>
+
+
+        <section class="treatment-group" aria-labelledby="pneumoniaTreatmentsHeading">
+          <h2 id="pneumoniaTreatmentsHeading">Pneumonia</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="Pneumonia treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="pneumonia-treatment">
+              Pneumonia Treatment
             </button>
           </div>
         </section>
@@ -174,6 +232,96 @@
       </div>
     </section>
 
+    <!-- RESPIRATORY FAILURE DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="respiratory-failure-diagnosis" aria-label="Respiratory failure diagnosis flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/respiratory-failure-diagnosis.png"
+            alt="Diagnostic approach to respiratory failure flowchart"
+            draggable="false"
+          />
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+          <button class="treatment-button" type="button" data-view-target="respiratory-failure-treatment">Respiratory Failure Treatment →</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PNEUMONIA DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="pneumonia-diagnosis" aria-label="Pneumonia diagnosis flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/pneumonia-diagnosis.png"
+            alt="Diagnostic approach to pneumonia flowchart"
+            draggable="false"
+          />
+
+          <button
+            class="hotspot"
+            style="--x:45.55%; --y:12.05%; --w:16.25%; --h:6.55%; --border-color:#b6b9bd; --border-hover:#8c9197;"
+            data-modal-image="assets/pneumonia-signs-of-consolidation.png"
+            data-modal-title="Signs of Consolidation"
+            aria-label="Open signs of consolidation reference"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:9.45%; --y:75.85%; --w:19.75%; --h:6.55%; --border-color:#b6b9bd; --border-hover:#8c9197;"
+            data-modal-image="assets/pneumonia-curb65-score.png"
+            data-modal-title="CURB-65 Score"
+            aria-label="Open CURB-65 score reference"
+          ></button>
+
+          <button
+            class="flowchart-link-hotspot"
+            style="--x:52.60%; --y:86.75%; --w:33.75%; --h:12.25%; --border-color:#9a9a9a; --border-hover:#696969;"
+            type="button"
+            data-view-target="pneumonia-complications"
+            aria-label="Open pneumonia pathogen testing and complications flowchart"
+          ></button>
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+          <button class="treatment-button" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PNEUMONIA PATHOGEN TESTING / COMPLICATIONS -->
+    <section class="page-view flowchart-view" data-view="pneumonia-complications" aria-label="Pneumonia pathogen testing and complications flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/pneumonia-complications.png"
+            alt="Pneumonia pathogen testing and complications flowchart"
+            draggable="false"
+          />
+
+          <button
+            class="hotspot"
+            style="--x:35.35%; --y:16.70%; --w:30.05%; --h:5.70%; --border-color:#d9b7b1; --border-hover:#bf8f86;"
+            data-modal-image="assets/pneumonia-red-flags.png"
+            data-modal-title="Pneumonia Red Flags"
+            aria-label="Open pneumonia red flags reference"
+          ></button>
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="pneumonia-diagnosis">← Pneumonia Diagnosis</button>
+          <button class="treatment-button" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
+        </div>
+      </div>
+    </section>
+
     <!-- ASTHMA TREATMENT: STEPWISE -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-stepwise" aria-label="Stepwise asthma treatment flowchart" hidden>
       <div class="treatment-chart-shell">
@@ -215,6 +363,45 @@
         </div>
       </div>
     </section>
+    <!-- RESPIRATORY FAILURE TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="respiratory-failure-treatment" aria-label="Respiratory failure treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Respiratory failure treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="respiratory-failure-treatment">Respiratory Failure</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="ventilator-management">Managing the Ventilator</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/respiratory-failure-treatment.png" alt="Treatment of respiratory failure" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MANAGING THE VENTILATOR -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="ventilator-management" aria-label="Managing the ventilator flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Respiratory failure treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="respiratory-failure-treatment">Respiratory Failure</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="ventilator-management">Managing the Ventilator</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/ventilator-management.png" alt="Managing the ventilator overview" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PNEUMONIA TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="pneumonia-treatment" aria-label="Pneumonia treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Pneumonia treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="pneumonia-treatment">Pneumonia Treatment</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/pneumonia-treatment.png" alt="Treatment of pneumonia table" draggable="false" />
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div class="modal" id="imageModal" aria-hidden="true">
