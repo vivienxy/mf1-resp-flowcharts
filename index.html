@@ -106,6 +106,11 @@
             <span>e.g., PFT's for COPD, asthma, interstitial lung disease</span>
           </button>
 
+          <button class="flowchart-card" type="button" data-view-target="copd-diagnosis">
+            <strong>Chronic Obstructive Pulmonary Disease (COPD)</strong>
+            <span>e.g., Emphysema, chronic bronchitis</span>
+          </button>
+
         </div>
       </div>
     </section>
@@ -151,6 +156,18 @@
           <div class="treatment-choice-tabs" role="group" aria-label="Pneumonia treatment flowcharts">
             <button class="treatment-choice-tab" type="button" data-view-target="pneumonia-treatment">
               Pneumonia Treatment
+            </button>
+          </div>
+        </section>
+
+        <section class="treatment-group" aria-labelledby="copdTreatmentsHeading">
+          <h2 id="copdTreatmentsHeading">Chronic Obstructive Pulmonary Disease (COPD)</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="COPD treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="copd-treatment">
+              COPD Treatment
+            </button>
+            <button class="treatment-choice-tab" type="button" data-view-target="copd-acute-exacerbation-treatment">
+              Acute COPD Exacerbation Treatment
             </button>
           </div>
         </section>
@@ -255,6 +272,49 @@
         </div>
       </div>
     </section>
+
+    <!-- COPD DIAGNOSIS -->
+    <section class="page-view flowchart-view" data-view="copd-diagnosis" aria-label="COPD diagnosis flowchart" hidden>
+      <div class="chart-stage chart-stage-with-footer">
+        <div class="chart-wrap">
+          <img
+            class="flowchart"
+            src="assets/copd-diagnosis.png"
+            alt="Diagnostic approach to COPD flowchart"
+            draggable="false"
+          />
+
+          <button
+            class="hotspot"
+            style="--x:76.98%; --y:20.33%; --w:21.29%; --h:7.31%; --border-color:#d79a9a; --border-hover:#b96f6f;"
+            data-modal-image="assets/copd-ecg-findings.png"
+            data-modal-title="COPD ECG Findings"
+            aria-label="Open COPD ECG findings examples"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:68.74%; --y:49.21%; --w:15.91%; --h:7.66%; --border-color:#e4ae7e; --border-hover:#ca8c57;"
+            data-modal-image="assets/copd-dlco.png"
+            data-modal-title="DLCO in Emphysema"
+            aria-label="Open DLCO explanation"
+          ></button>
+
+          <button
+            class="hotspot"
+            style="--x:51.29%; --y:76.58%; --w:28.46%; --h:9.42%; --border-color:#d9a5a5; --border-hover:#bb7d7d;"
+            data-modal-image="assets/copd-alpha1-antitrypsin.png"
+            data-modal-title="Emphysema Patterns and Alpha-1 Antitrypsin Deficiency"
+            aria-label="Open emphysema patterns and alpha-1 antitrypsin deficiency reference"
+          ></button>
+        </div>
+
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- RESPIRATORY FAILURE DIAGNOSIS -->
     <section class="page-view flowchart-view" data-view="respiratory-failure-diagnosis" aria-label="Respiratory failure diagnosis flowchart" hidden>
@@ -422,6 +482,32 @@
         </nav>
         <div class="treatment-image-stage">
           <img class="treatment-flowchart-image" src="assets/pneumonia-treatment.png" alt="Treatment of pneumonia table" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- COPD TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="copd-treatment" aria-label="COPD treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="COPD treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-treatment">COPD Treatment</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-acute-exacerbation-treatment">Acute Exacerbation of COPD</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/copd-treatment.png" alt="Treatment of COPD flowchart" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ACUTE COPD EXACERBATION TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="copd-acute-exacerbation-treatment" aria-label="Acute COPD exacerbation treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="COPD treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-treatment">COPD Treatment</button>
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-acute-exacerbation-treatment">Acute Exacerbation of COPD</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/aceb-treatment.png" alt="Treatment of acute COPD exacerbation flowchart" draggable="false" />
         </div>
       </div>
     </section>

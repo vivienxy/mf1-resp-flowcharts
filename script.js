@@ -40,7 +40,7 @@ function closeModal() {
 function sectionForView(viewName) {
   if (viewName === "home") return "home";
   if (["diagnostics-menu", "urti", "asthma", "pft-diagnosis"].includes(viewName)) return "diagnostics";
-  if (["treatments-menu", "asthma-treatment"].includes(viewName)) return "treatments";
+  if (["treatments-menu", "asthma-treatment", "copd-treatment", "copd-acute-exacerbation-treatment"].includes(viewName)) return "treatments";
   return "home";
 }
 
@@ -52,7 +52,9 @@ function titleForView(viewName) {
     urti: "URTI Diagnosis — Respiratory Flowcharts",
     asthma: "Asthma Diagnosis — Respiratory Flowcharts",
     "pft-diagnosis": "PFT Diagnosis — Respiratory Flowcharts",
-    "asthma-treatment": "Asthma Treatment — Respiratory Flowcharts"
+    "asthma-treatment": "Asthma Treatment — Respiratory Flowcharts",
+    "copd-treatment": "COPD Treatment — Respiratory Flowcharts",
+    "copd-acute-exacerbation-treatment": "Acute COPD Exacerbation Treatment — Respiratory Flowcharts"
   };
   return titles[viewName] || "Respiratory Flowcharts";
 }
