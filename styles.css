@@ -127,9 +127,12 @@ button:focus-visible {
   padding: 52px 0;
 }
 
-.landing-heading,
+.landing-heading {
+  margin-bottom: 30px;
+}
+
 .menu-heading {
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .landing-heading h1,
@@ -155,8 +158,39 @@ button:focus-visible {
   margin-top: 20px;
 }
 
+.landing-info-box,
+.special-thanks-box {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.landing-info-box p,
+.special-thanks-box p {
+  margin-top: 0;
+}
+
+.landing-info-box {
+  border: 1px solid var(--line);
+  background: transparent;
+}
+
+.special-thanks-box {
+  border: 1px solid #0b5394;
+  background: #cfe2f3;
+}
+
+.special-thanks-box p {
+  color: #0b5394;
+}
+
+.landing-info-box p + p,
+.special-thanks-box .special-thanks-item {
+  margin-top: 6px;
+}
+
 .landing-heading .special-thanks-heading {
-  margin-top: 40px;
+  margin-top: 0;
   font-weight: 700;
 }
 
@@ -169,6 +203,12 @@ button:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+}
+
+.category-grid {
+  margin-top: 0;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
 }
 
 .category-card,
@@ -192,6 +232,20 @@ button:focus-visible {
 .flowchart-card:hover {
   background: var(--soft);
   border-color: #9ea1a6;
+}
+
+.diagnostic-card,
+.diagnostic-card:hover {
+  border-color: #741b47;
+  background: #ead1dc;
+  color: #741b47;
+}
+
+.treatment-card,
+.treatment-card:hover {
+  border-color: #38761d;
+  background: #d9ead3;
+  color: #38761d;
 }
 
 .category-card strong,
