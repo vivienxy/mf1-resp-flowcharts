@@ -109,12 +109,17 @@
 
           <button class="flowchart-card" type="button" data-view-target="pft-diagnosis">
             <strong>Pulmonary Function Tests</strong>
-            <span>e.g., PFT's for COPD, asthma, interstitial lung disease</span>
+            <span>e.g., PFTs for COPD, asthma, interstitial lung disease</span>
           </button>
 
           <button class="flowchart-card" type="button" data-view-target="copd-diagnosis">
             <strong>Chronic Obstructive Pulmonary Disease (COPD)</strong>
             <span>e.g., Emphysema, chronic bronchitis</span>
+          </button>
+
+          <button class="flowchart-card" type="button" data-view-target="restrictive-lung-diagnosis">
+            <strong>Restrictive Lung Disease</strong>
+            <span>e.g., idiopathic pulmonary fibrosis, sarcoidosis</span>
           </button>
 
         </div>
@@ -174,6 +179,15 @@
             </button>
             <button class="treatment-choice-tab" type="button" data-view-target="copd-acute-exacerbation-treatment">
               Acute COPD Exacerbation Treatment
+            </button>
+          </div>
+        </section>
+
+        <section class="treatment-group" aria-labelledby="restrictiveLungTreatmentsHeading">
+          <h2 id="restrictiveLungTreatmentsHeading">Restrictive Lung Disease</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="Restrictive lung disease treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="restrictive-lung-treatment">
+              Restrictive Lung Disease Treatment
             </button>
           </div>
         </section>
@@ -530,6 +544,91 @@
         </nav>
         <div class="treatment-image-stage">
           <img class="treatment-flowchart-image" src="assets/aceb-treatment.png" alt="Treatment of acute COPD exacerbation flowchart" draggable="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- RESTRICTIVE LUNG DISEASE DIAGNOSIS -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="restrictive-lung-diagnosis" aria-label="Restrictive lung disease diagnosis flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <div class="treatment-image-stage">
+          <div class="treatment-image-wrap restrictive-diagnostic-image-wrap">
+            <img class="treatment-flowchart-image" src="assets/restrictive-lung-diagnostic.png" alt="Diagnostic approach to restrictive lung disease" draggable="false" />
+
+            <button
+              class="hotspot"
+              style="--x:75.68%; --y:18.73%; --w:11.76%; --h:5.78%; --border-color:#674ea7; --border-hover:#4c367d;"
+              data-modal-image="assets/restrictive-lung-ild.png"
+              data-modal-title="Interstitial Lung Disease"
+              aria-label="Open interstitial lung disease reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:4.77%; --y:15.10%; --w:13.15%; --h:7.62%; --border-color:#bf9000; --border-hover:#8f6c00;"
+              data-modal-image="assets/restrictive-lung-silicosis.png"
+              data-modal-title="Coal Lung or Silicosis"
+              aria-label="Open coal lung or silicosis reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:4.77%; --y:24.24%; --w:13.15%; --h:8.00%; --border-color:#bf9000; --border-hover:#8f6c00;"
+              data-modal-image="assets/restrictive-lung-asbestosis.png"
+              data-modal-title="IPF or Asbestosis"
+              aria-label="Open IPF or asbestosis reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:4.77%; --y:44.35%; --w:13.15%; --h:7.82%; --border-color:#a64d79; --border-hover:#7d385c;"
+              data-modal-image="assets/restrictive-lung-sarcoidosis.png"
+              data-modal-title="Sarcoidosis or Berylliosis"
+              aria-label="Open sarcoidosis or berylliosis reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:4.77%; --y:53.80%; --w:13.15%; --h:5.39%; --border-color:#666; --border-hover:#444;"
+              data-modal-image="assets/restrictive-lung-honeycomb-ct.png"
+              data-modal-title="Honeycombing in IPF"
+              aria-label="Open honeycombing in IPF reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:42.25%; --y:50.33%; --w:15.83%; --h:10.84%; --border-color:#3d85c6; --border-hover:#2b5f8d;"
+              data-modal-image="assets/restrictive-lung-fev-pft.png"
+              data-modal-title="FEV and Pulmonary Function Test References"
+              aria-label="Open FEV and pulmonary function test references"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:72.45%; --y:51.00%; --w:18.37%; --h:7.43%; --border-color:#e06666; --border-hover:#c94f4f;"
+              data-modal-image="assets/restrictive-lung-broncholavage.png"
+              data-modal-title="Bronchoalveolar Lavage"
+              aria-label="Open bronchoalveolar lavage reference"
+            ></button>
+          </div>
+        </div>
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESTRICTIVE LUNG DISEASE TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="restrictive-lung-treatment" aria-label="Restrictive lung disease treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <nav class="treatment-tabs" aria-label="Restrictive lung disease treatment flowcharts">
+          <button class="treatment-tab" type="button" data-treatment-tab data-view-target="restrictive-lung-treatment">Treatment</button>
+        </nav>
+        <div class="treatment-image-stage">
+          <img class="treatment-flowchart-image" src="assets/restrictive-lung-treatment.png" alt="Treatment of restrictive lung disease" draggable="false" />
+        </div>
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="treatments-menu">← Treatment/Management</button>
         </div>
       </div>
     </section>

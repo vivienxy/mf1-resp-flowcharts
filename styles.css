@@ -261,6 +261,33 @@ button:focus-visible {
   line-height: 1.4;
 }
 
+.page-view[data-view="diagnostics-menu"] .menu-shell {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.page-view[data-view="diagnostics-menu"] .menu-heading {
+  margin-bottom: 30px;
+}
+
+.page-view[data-view="diagnostics-menu"] .flowchart-card-grid {
+  gap: 20px;
+}
+
+.page-view[data-view="diagnostics-menu"] .flowchart-card {
+  padding: 10px 14px;
+  gap: 2px;
+}
+
+.page-view[data-view="diagnostics-menu"] .flowchart-card strong {
+  font-size: 1rem;
+}
+
+.page-view[data-view="diagnostics-menu"] .flowchart-card span {
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+
 /* Flowcharts */
 .flowchart-view { overflow: hidden; }
 
@@ -355,6 +382,10 @@ button:focus-visible {
   max-width: 100%;
   max-height: 100%;
   line-height: 0;
+}
+
+.restrictive-diagnostic-image-wrap {
+  aspect-ratio: 2722 / 1522;
 }
 
 .treatment-flowchart-image {

@@ -39,8 +39,8 @@ function closeModal() {
 
 function sectionForView(viewName) {
   if (viewName === "home") return "home";
-  if (["diagnostics-menu", "urti", "asthma", "pft-diagnosis"].includes(viewName)) return "diagnostics";
-  if (["treatments-menu", "asthma-treatment", "copd-treatment", "copd-acute-exacerbation-treatment"].includes(viewName)) return "treatments";
+  if (["diagnostics-menu", "urti", "asthma", "pft-diagnosis", "restrictive-lung-diagnosis"].includes(viewName)) return "diagnostics";
+  if (["treatments-menu", "asthma-treatment", "copd-treatment", "copd-acute-exacerbation-treatment", "restrictive-lung-treatment"].includes(viewName)) return "treatments";
   return "home";
 }
 
@@ -52,9 +52,11 @@ function titleForView(viewName) {
     urti: "URTI Diagnosis — Respiratory Flowcharts",
     asthma: "Asthma Diagnosis — Respiratory Flowcharts",
     "pft-diagnosis": "PFT Diagnosis — Respiratory Flowcharts",
+    "restrictive-lung-diagnosis": "Restrictive Lung Disease Diagnosis — Respiratory Flowcharts",
     "asthma-treatment": "Asthma Treatment — Respiratory Flowcharts",
     "copd-treatment": "COPD Treatment — Respiratory Flowcharts",
-    "copd-acute-exacerbation-treatment": "Acute COPD Exacerbation Treatment — Respiratory Flowcharts"
+    "copd-acute-exacerbation-treatment": "Acute COPD Exacerbation Treatment — Respiratory Flowcharts",
+    "restrictive-lung-treatment": "Restrictive Lung Disease Treatment — Respiratory Flowcharts"
   };
   return titles[viewName] || "Respiratory Flowcharts";
 }
