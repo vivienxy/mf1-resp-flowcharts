@@ -349,6 +349,13 @@ button:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
+.chart-top-actions {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 8px 8px 0;
+}
+
 .treatment-tab {
   padding: 7px 12px;
   border: 1px solid #aeb1b5;
