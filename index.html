@@ -52,17 +52,18 @@
       <div class="landing-shell">
         <div class="landing-heading">
           <h1>MF1 Respirology; Clinical Medicine</h1>
+          <div class="placeholder-box">made by: vivien (wrc c29)</div>
           <p><Base></Base>Before you ask, no, I did not make the flowcharts (full credit to ninja nerd)</p>
-          <p>Use the menu options at the top to navigate, I haven't added all the back buttons yet</p>
+          <p>Not all the buttons are consistent; I will fix that after I get some sleep (which may be a while, sorry)</p>
           <div class="landing-info-box">
-            <p>ADDED: URTI, asthma, resp failure, pneumonia, PFTs, COPD</p>
-            <p>TO DO: Interstitial lung disease, ARDS</p>
+            <p>ADDED: URTI, asthma, resp failure, pneumonia, PFTs, COPD, interstitial lung disease, ARDS</p>
+            <p>TO DO (maybe): pleural effusion, pneumothorax, pulmonary embolism, lung cancer</p>
           </div>
 
           <div class="special-thanks-box">
             <p class="special-thanks-heading">SPECIAL THANKS TO:</p>
-            <p class="special-thanks-item">1. Zach/Ninja Nerd (sorry Angus)</p>
-            <p class="special-thanks-item">2. Jackie (for figuring out venous admixture with me at 12am)</p>
+            <p class="special-thanks-item">1. Jackie (for teaching me all i know about immunology)</p>
+            <p class="special-thanks-item">2. Ninja Nerd (you're on thin ice, i'm getting sick of your face)</p>
             <p class="special-thanks-item">3. The rest of the late night WRC crew</p>
           </div>
         </div>
@@ -119,7 +120,12 @@
 
           <button class="flowchart-card" type="button" data-view-target="restrictive-lung-diagnosis">
             <strong>Restrictive Lung Disease</strong>
-            <span>e.g., idiopathic pulmonary fibrosis, sarcoidosis</span>
+            <span>e.g., Idiopathic pulmonary fibrosis, sarcoidosis</span>
+          </button>
+
+          <button class="flowchart-card" type="button" data-view-target="ards-diagnosis">
+            <strong>Acute Respiratory Distress Syndrome (ARDS)</strong>
+            <span>e.g., ARDS, cardiogenic pulmonary edema</span>
           </button>
 
         </div>
@@ -188,6 +194,15 @@
           <div class="treatment-choice-tabs" role="group" aria-label="Restrictive lung disease treatment flowcharts">
             <button class="treatment-choice-tab" type="button" data-view-target="restrictive-lung-treatment">
               Restrictive Lung Disease Treatment
+            </button>
+          </div>
+        </section>
+
+        <section class="treatment-group" aria-labelledby="ardsTreatmentsHeading">
+          <h2 id="ardsTreatmentsHeading">Acute Respiratory Distress Syndrome (ARDS)</h2>
+          <div class="treatment-choice-tabs" role="group" aria-label="ARDS treatment flowcharts">
+            <button class="treatment-choice-tab" type="button" data-view-target="ards-treatment">
+              ARDS Treatment
             </button>
           </div>
         </section>
@@ -270,7 +285,7 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
-          <button class="treatment-button" type="button" data-view-target="asthma-treatment-stepwise">Asthma Treatment →</button>
+          <button class="footer-secondary" type="button" data-view-target="asthma-treatment-stepwise">Asthma Treatment →</button>
         </div>
       </div>
     </section>
@@ -331,6 +346,7 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+          <button class="footer-secondary" type="button" data-view-target="copd-treatment">COPD Treatment →</button>
         </div>
       </div>
     </section>
@@ -350,7 +366,7 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
-          <button class="treatment-button" type="button" data-view-target="respiratory-failure-treatment">Respiratory Failure Treatment →</button>
+          <button class="footer-secondary" type="button" data-view-target="respiratory-failure-treatment">Respiratory Failure Treatment →</button>
         </div>
       </div>
     </section>
@@ -394,7 +410,7 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
-          <button class="treatment-button" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
+          <button class="footer-secondary" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
         </div>
       </div>
     </section>
@@ -421,7 +437,7 @@
 
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="pneumonia-diagnosis">← Pneumonia Diagnosis</button>
-          <button class="treatment-button" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
+          <button class="footer-secondary" type="button" data-view-target="pneumonia-treatment">Pneumonia Treatment →</button>
         </div>
       </div>
     </section>
@@ -429,6 +445,9 @@
     <!-- ASTHMA TREATMENT: STEPWISE -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-stepwise" aria-label="Stepwise asthma treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="asthma">← Asthma Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
@@ -443,6 +462,9 @@
     <!-- ASTHMA TREATMENT: EXACERBATION -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-exacerbation" aria-label="Asthma exacerbation treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="asthma">← Asthma Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
@@ -457,6 +479,9 @@
     <!-- ASTHMA TREATMENT: MECHANISMS -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="asthma-treatment-mechanisms" aria-label="Asthma treatment mechanisms flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="asthma">← Asthma Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Asthma treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-stepwise">Stepwise</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="asthma-treatment-exacerbation">Exacerbation</button>
@@ -470,6 +495,9 @@
     <!-- RESPIRATORY FAILURE TREATMENT -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="respiratory-failure-treatment" aria-label="Respiratory failure treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="respiratory-failure-diagnosis">← Respiratory Failure Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Respiratory failure treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="respiratory-failure-treatment">Respiratory Failure</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="ventilator-management">Managing the Ventilator</button>
@@ -483,6 +511,9 @@
     <!-- MANAGING THE VENTILATOR -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="ventilator-management" aria-label="Managing the ventilator flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="respiratory-failure-diagnosis">← Respiratory Failure Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Respiratory failure treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="respiratory-failure-treatment">Respiratory Failure</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="ventilator-management">Managing the Ventilator</button>
@@ -497,6 +528,9 @@
     <!-- PNEUMONIA TREATMENT -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="pneumonia-treatment" aria-label="Pneumonia treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="pneumonia-diagnosis">← Pneumonia Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="Pneumonia treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="pneumonia-treatment">Pneumonia Treatment</button>
         </nav>
@@ -509,6 +543,9 @@
     <!-- COPD TREATMENT -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="copd-treatment" aria-label="COPD treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="copd-diagnosis">← COPD Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="COPD treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-treatment">COPD Treatment</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-acute-exacerbation-treatment">Acute Exacerbation of COPD</button>
@@ -538,6 +575,9 @@
     <!-- ACUTE COPD EXACERBATION TREATMENT -->
     <section class="page-view flowchart-view treatment-flowchart-view" data-view="copd-acute-exacerbation-treatment" aria-label="Acute COPD exacerbation treatment flowchart" hidden>
       <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="copd-diagnosis">← COPD Diagnosis</button>
+        </div>
         <nav class="treatment-tabs" aria-label="COPD treatment flowcharts">
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-treatment">COPD Treatment</button>
           <button class="treatment-tab" type="button" data-treatment-tab data-view-target="copd-acute-exacerbation-treatment">Acute Exacerbation of COPD</button>
@@ -629,6 +669,87 @@
         </div>
         <div class="treatment-image-stage">
           <img class="treatment-flowchart-image" src="assets/restrictive-lung-treatment.png" alt="Treatment of restrictive lung disease" draggable="false" />
+        </div>
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="treatments-menu">← Treatment/Management</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARDS DIAGNOSIS -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="ards-diagnosis" aria-label="ARDS diagnosis flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <div class="treatment-image-stage">
+          <div class="treatment-image-wrap ards-diagnostic-image-wrap">
+            <img class="treatment-flowchart-image" src="assets/ards-diagnosis.png" alt="Diagnostic approach to ARDS" draggable="false" />
+
+            <button
+              class="hotspot"
+              style="--x:9.04%; --y:25.67%; --w:17.58%; --h:6.40%; --border-color:#ea9999; --border-hover:#cc6666;"
+              data-modal-image="assets/ards-pf-ratio.png"
+              data-modal-title="P/F Ratio Supporting ARDS"
+              aria-label="Open P/F ratio reference supporting ARDS"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:42.65%; --y:49.33%; --w:12.59%; --h:11.07%; --border-color:#999; --border-hover:#666;"
+              data-modal-image="assets/ards-cxr-ct.png"
+              data-modal-title="ARDS Chest Imaging"
+              aria-label="Open chest X-ray and chest CT references"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:40.69%; --y:68.67%; --w:16.44%; --h:8.00%; --border-color:#999; --border-hover:#666;"
+              data-modal-image="assets/ards-echo.png"
+              data-modal-title="ARDS Echocardiogram"
+              aria-label="Open echocardiogram reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:39.18%; --y:84.00%; --w:20.03%; --h:7.73%; --border-color:#d47b7b; --border-hover:#b85b5b;"
+              data-modal-image="assets/ards-swan.png"
+              data-modal-title="Right Heart Catheterization"
+              aria-label="Open right heart catheterization reference"
+            ></button>
+          </div>
+        </div>
+        <div class="chart-footer">
+          <button class="footer-secondary" type="button" data-view-target="diagnostics-menu">← Diagnosis</button>
+          <button class="footer-secondary" type="button" data-view-target="ards-treatment">ARDS Treatment →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARDS TREATMENT -->
+    <section class="page-view flowchart-view treatment-flowchart-view" data-view="ards-treatment" aria-label="ARDS treatment flowchart" hidden>
+      <div class="treatment-chart-shell">
+        <div class="chart-top-actions">
+          <button class="footer-secondary" type="button" data-view-target="ards-diagnosis">← ARDS Diagnosis</button>
+          <button class="footer-secondary" type="button" data-view-target="ventilator-management">Managing the Ventilator →</button>
+        </div>
+        <div class="treatment-image-stage">
+          <div class="treatment-image-wrap ards-treatment-image-wrap">
+            <img class="treatment-flowchart-image" src="assets/ards-treatment.png" alt="Treatment of ARDS" draggable="false" />
+
+            <button
+              class="hotspot"
+              style="--x:79.57%; --y:59.45%; --w:11.05%; --h:7.31%; --border-color:#d99058; --border-hover:#b66e3f;"
+              data-modal-image="assets/ards-prone.png"
+              data-modal-title="Prone Positioning in ARDS"
+              aria-label="Open prone positioning reference"
+            ></button>
+
+            <button
+              class="hotspot"
+              style="--x:77.67%; --y:88.54%; --w:14.71%; --h:7.44%; --border-color:#d47b7b; --border-hover:#b85b5b;"
+              data-modal-image="assets/ards-vvecmo.png"
+              data-modal-title="V-V ECMO in ARDS"
+              aria-label="Open V-V ECMO reference"
+            ></button>
+          </div>
         </div>
         <div class="chart-footer">
           <button class="footer-secondary" type="button" data-view-target="treatments-menu">← Treatment/Management</button>

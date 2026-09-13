@@ -154,6 +154,17 @@ button:focus-visible {
   margin-top: 20px;
 }
 
+.placeholder-box {
+  width: fit-content;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 .landing-heading p:nth-of-type(2) {
   margin-top: 20px;
 }
@@ -170,6 +181,10 @@ button:focus-visible {
   margin-top: 0;
 }
 
+.landing-info-box p {
+  font-size: 0.85rem;
+}
+
 .landing-info-box {
   border: 1px solid var(--line);
   background: transparent;
@@ -184,7 +199,10 @@ button:focus-visible {
   color: #0b5394;
 }
 
-.landing-info-box p + p,
+.landing-info-box p + p {
+  margin-top: 0;
+}
+
 .special-thanks-box .special-thanks-item {
   margin-top: 6px;
 }
@@ -262,8 +280,8 @@ button:focus-visible {
 }
 
 .page-view[data-view="diagnostics-menu"] .menu-shell {
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 .page-view[data-view="diagnostics-menu"] .menu-heading {
@@ -353,6 +371,7 @@ button:focus-visible {
   flex: 0 0 auto;
   display: flex;
   justify-content: center;
+  gap: 8px;
   padding: 8px 8px 0;
 }
 
@@ -393,6 +412,14 @@ button:focus-visible {
 
 .restrictive-diagnostic-image-wrap {
   aspect-ratio: 2722 / 1522;
+}
+
+.ards-diagnostic-image-wrap {
+  aspect-ratio: 2654 / 1500;
+}
+
+.ards-treatment-image-wrap {
+  aspect-ratio: 2624 / 1492;
 }
 
 .treatment-flowchart-image {
@@ -468,7 +495,7 @@ button:focus-visible {
   background: var(--soft);
 }
 
-/* Treatment placeholder */
+
 .placeholder-card {
   width: min(620px, calc(100vw - 40px));
   margin: 70px auto 0;
