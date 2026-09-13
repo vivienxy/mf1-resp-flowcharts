@@ -176,9 +176,20 @@ button:focus-visible {
   border-radius: 6px;
 }
 
-.landing-info-box p,
+.landing-info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 20px;
+  color: var(--muted);
+}
+
+.landing-info-box p {
+  margin-top: 13px;
+}
+
 .special-thanks-box p {
-  margin-top: 0;
+  margin-top: 1px;
 }
 
 .landing-info-box p {
@@ -225,8 +236,10 @@ button:focus-visible {
 
 .category-grid {
   margin-top: 0;
-  padding-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .category-card,
